@@ -13,6 +13,12 @@ public class MainMenuController : MonoBehaviour
 
     [SerializeField] GameObject windowsPencereMenu;
 
+    [SerializeField] GameObject antivirusMenu;
+
+    [SerializeField] GameObject chromeMenu;
+
+
+
     public static MainMenuController Instance;
 
 
@@ -34,6 +40,8 @@ public class MainMenuController : MonoBehaviour
         creditsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         windowsPencereMenu.SetActive(false);
+        antivirusMenu.SetActive(false);
+        chromeMenu.SetActive(false);
 
         if(PlayerPrefs.GetInt("FirstTime") == 0)
         {
@@ -55,6 +63,8 @@ public class MainMenuController : MonoBehaviour
         creditsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         windowsPencereMenu.SetActive(false);
+        antivirusMenu.SetActive(false);
+        chromeMenu.SetActive(false);
     }
 
     public void ShowLeaderboardMenu()
@@ -65,6 +75,8 @@ public class MainMenuController : MonoBehaviour
         creditsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         windowsPencereMenu.SetActive(false);
+        antivirusMenu.SetActive(false);
+        chromeMenu.SetActive(false);
         HighScores.Instance.DownloadHighScores();
     }
 
@@ -76,6 +88,8 @@ public class MainMenuController : MonoBehaviour
         creditsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         windowsPencereMenu.SetActive(false);
+        antivirusMenu.SetActive(false);
+        chromeMenu.SetActive(false);
     }
 
     public void ShowCreditsMenu()
@@ -86,6 +100,8 @@ public class MainMenuController : MonoBehaviour
         creditsMenu.SetActive(true);
         settingsMenu.SetActive(false);
         windowsPencereMenu.SetActive(false);
+        antivirusMenu.SetActive(false);
+        chromeMenu.SetActive(false);
     }
 
     public void Play()
@@ -105,6 +121,8 @@ public class MainMenuController : MonoBehaviour
         creditsMenu.SetActive(false);
         settingsMenu.SetActive(true);
         windowsPencereMenu.SetActive(false);
+        antivirusMenu.SetActive(false);
+        chromeMenu.SetActive(false);
     }
 
 
@@ -116,6 +134,34 @@ public class MainMenuController : MonoBehaviour
         creditsMenu.SetActive(false);
         settingsMenu.SetActive(false);
         windowsPencereMenu.SetActive(true);
+        antivirusMenu.SetActive(false);
+        chromeMenu.SetActive(false);
+
+    }
+
+    public void ShowAntivirus()
+    {
+        normalMainMenu.SetActive(true);
+        leaderboardMenu.SetActive(false);
+        firstOpenMenu.SetActive(false);
+        creditsMenu.SetActive(false);
+        settingsMenu.SetActive(false);
+        windowsPencereMenu.SetActive(false);
+        antivirusMenu.SetActive(true);
+        chromeMenu.SetActive(false);
+
+    }
+
+    public void ShowChrome()
+    {
+        normalMainMenu.SetActive(true);
+        leaderboardMenu.SetActive(false);
+        firstOpenMenu.SetActive(false);
+        creditsMenu.SetActive(false);
+        settingsMenu.SetActive(false);
+        windowsPencereMenu.SetActive(false);
+        antivirusMenu.SetActive(false);
+        chromeMenu.SetActive(true);
 
     }
 }
