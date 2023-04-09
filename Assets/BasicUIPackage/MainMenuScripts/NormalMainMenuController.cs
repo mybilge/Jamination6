@@ -20,7 +20,22 @@ public class NormalMainMenuController : MonoBehaviour
 
 
             bestScoreText.text = "Best Score: " + scoreText;
-            HighScores.AddNewHighScore(PlayerPrefs.GetString("Username"), PlayerPrefs.GetInt("BestScore"));
+            //HighScores.AddNewHighScore(PlayerPrefs.GetString("Username"), PlayerPrefs.GetInt("BestScore"));
+        }
+    }
+
+    private void OnEnable() {
+        if (PlayerPrefs.GetString("Username") != "")
+        {
+            usernameText.text = PlayerPrefs.GetString("Username");
+
+            double mainGameTimerd = (double)PlayerPrefs.GetInt("BestScore");
+            TimeSpan time = TimeSpan.FromSeconds(mainGameTimerd);
+            string scoreText = time.ToString("mm':'ss");
+
+
+            bestScoreText.text = "Best Score: " + scoreText;
+            //HighScores.AddNewHighScore(PlayerPrefs.GetString("Username"), PlayerPrefs.GetInt("BestScore"));
         }
     }
 }

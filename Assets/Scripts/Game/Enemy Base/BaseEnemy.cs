@@ -81,7 +81,8 @@ public abstract class BaseEnemy : MonoBehaviour, IEnemy
         
 
         BaseEnemy newEnemyBE = Instantiate(newEnemy, transform.position,transform.rotation);
-        newEnemyBE.canChange = false;        
+        newEnemyBE.canChange = false;
+        AudioSourceManager.Instance.PlayOneTime(AudioSourceManager.Instance.donusumClip);
         newEnemyBE.StartCoroutine("AfterChange");
         Destroy(gameObject);        
     }

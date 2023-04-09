@@ -15,6 +15,7 @@ public class PlayerCollision : MonoBehaviour
             
             Destroy(bullet.gameObject);
             GetComponent<PlayerShoot>().bulletCount++;
+            AudioSourceManager.Instance.PlayOneTime(AudioSourceManager.Instance.reloadClip);
             UIManager.Instance.SetMermiText(GetComponent<PlayerShoot>().bulletCount);
         }
 

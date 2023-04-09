@@ -10,6 +10,8 @@ public class FirstOpenMenuController : MonoBehaviour
     [SerializeField] TextMeshProUGUI warningText;
     [SerializeField] Button startBtn;
 
+    [SerializeField] AudioSource audioSource;
+
 
     public void DevamEtButonuOnClick()
     {
@@ -51,6 +53,7 @@ public class FirstOpenMenuController : MonoBehaviour
         else{
             PlayerPrefs.SetInt("FirstTime", 1);
             PlayerPrefs.SetString("Username", usernameText);
+            audioSource.Play();
             MainMenuController.Instance.ShowNormalMainMenu();
             HighScores.AddNewHighScore(usernameText,0);
         }        

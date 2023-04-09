@@ -32,6 +32,8 @@ public class TimeManager : MonoBehaviour
 
         UIManager.Instance.SetEndGameText((int)timer);
 
+        AudioSourceManager.Instance.PlayOneTime(AudioSourceManager.Instance.kaybetmeClip);
+
 
         BaseEnemy[] enemies = GameObject.FindObjectsOfType<BaseEnemy>();
 

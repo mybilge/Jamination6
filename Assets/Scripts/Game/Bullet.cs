@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
     private void ReflectProjectile(Rigidbody rb, Vector3 reflectVector)
     {
         _velocity = Vector3.Reflect(_velocity, reflectVector);
+        AudioSourceManager.Instance.PlayOneTime(AudioSourceManager.Instance.bounceClip);
         _rb.velocity = _velocity;
     }
 }
