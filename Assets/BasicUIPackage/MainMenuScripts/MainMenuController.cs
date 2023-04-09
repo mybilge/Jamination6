@@ -17,6 +17,8 @@ public class MainMenuController : MonoBehaviour
 
     [SerializeField] GameObject chromeMenu;
 
+    [SerializeField] float kapatanaKadarBekle = 4f;
+
    
 
 
@@ -112,6 +114,11 @@ public class MainMenuController : MonoBehaviour
     }
 
     public void Exit(){
+        Invoke("HakikiExit", kapatanaKadarBekle);
+    }
+
+    public void HakikiExit()
+    {
         Application.Quit();
     }
 

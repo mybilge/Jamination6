@@ -12,6 +12,8 @@ public class AudioSourceManager : MonoBehaviour
     [SerializeField] public AudioClip tiklamaClip;
 
 
+    [SerializeField] AudioSource loopSource;
+
 
     public static AudioSourceManager Instance {get;private set;}
 
@@ -28,5 +30,10 @@ public class AudioSourceManager : MonoBehaviour
     public void PlayOneTime(AudioClip audioClip)
     {
         GetComponent<AudioSource>().PlayOneShot(audioClip);
+    }
+
+    public void StopLoop()
+    {
+        loopSource.Stop();
     }
 }
