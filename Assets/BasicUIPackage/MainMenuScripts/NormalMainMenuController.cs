@@ -20,7 +20,7 @@ public class NormalMainMenuController : MonoBehaviour
 
 
             bestScoreText.text = "Best Score: " + scoreText;
-            //HighScores.AddNewHighScore(PlayerPrefs.GetString("Username"), PlayerPrefs.GetInt("BestScore"));
+            HighScores.AddNewHighScore(PlayerPrefs.GetString("Username"), PlayerPrefs.GetInt("BestScore"));
         }
     }
 
